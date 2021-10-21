@@ -7,17 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="style.css">
-    
 </head>
 
 <body>
-    <div class="wrapper">
-        <p>Guess a number between 1 - 100.</p> 
-        <p> id="outputtext">Enter a number below</p> 
-        <input type="text" id="userInput">
-        <button id="btn">Enter</button>
-    <!-- Add markup here -->
+   <h1>Number guessing game</h1>
+
+    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+
+    <div class="form">
+      <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField">
+      <input type="submit" value="Submit guess" class="guessSubmit">
     </div>
+
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="lastResult"></p>
+      <p class="lowOrHi"></p>
+     </div>
     <script src="script.js"></script>
 </body>
 
