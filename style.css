@@ -1,13 +1,11 @@
-
+* {
+  font-weight: 600;
+  }
 
 body {
   font-family: Helvetica;
   margin-top: 100px;
   background-color: #48cae4;
-}
-
-h1 {
-  color: #0077b6;
 }
 
 div {
@@ -20,5 +18,7 @@ div {
   max-width: 400px;
   }
 
-
+h1 {
+  color: #0077b6;
+}
 
