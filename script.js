@@ -1,93 +1,94 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1;
+const guessField = document.getElementById("guessField");
+const highOrLow = document.getElementById("highOrLow");
+const previousGuess = document.getElementById("previousGuess");
+const rightOrWrong = document.getElementById("rightOrWrong");
+const submitButton = document.getElementById("submitButton");
+const paras = document.querySelectorAll("p");
+const container = document.getElementsByTagName("div")[0];
+const userGoesSpan = document.getElementsByTagName("span")[0];
+let randomNumber;
+let userGuess;
+let userGoes = 10;
 
-const guesses = document.querySelector('.guesses');
-const lastResult = document.querySelector('.lastResult');
-const lowOrHi = document.querySelector('.lowOrHi');
+// guessField.focus();
 
-const guessSubmit = document.querySelector('.guessSubmit');
-const guessField = document.querySelector('.guessField');
+var generateNumber =()=> {
+   randomNumber = Math.floor(Math.random() * 100) + 1;
+}
 
-let guessCount = 1;
-resetButton = document.querySelector('.resetButton');
-guessField.focus();
+generateNumber();
 
-const checkGuess = () => {
-  let userGuess = Number(guessField.value);
-  if (guessCount === 1) {
-    guesses.textContent = 'Previous guesses: ';
-  }
+var submitGuess =()=> {
+ userGoes--;
+ userGoesSpan.innerHTML = userGoes;
+ userGuess = Number(guessField.value);
+ guessField.value = "";
+ 
+  if (userGoes === 9) {
+    previousGuess.textContent = "Your Guesses:";
+   }
   
-  guesses.textContent += userGuess + ' ';
+  previousGuess.textContent += " " + userGuess + " ";
   
   if (userGuess === randomNumber) {
-    lastResult.textContent = 'Congratulations! You got it right!';
-    lastResult.classList.toggle('wrongAnswer');
-    lastResult.classList.add('rightAnswer');
-    lowOrHi.textContent = '';
-    setGameOver();
-  } else if (guessCount === 10) {
-    lastResult.textContent = '!!!GAME OVER!!!';
-    lastResult.classList.add('gameOver');
-    setGameOver();
-  } else {
-    lastResult.textContent = 'Wrong!';
-    lastResult.classList.add('wrongAnswer');
-    lowOrHi.textContent = (userGuess < randomNumber) ? 'Last guess was too low!' : 'Last guess was too high!';
+    rightOrWrong.textContent = "YOU WIN!";
+    rightOrWrong.style.backgroundColor = "green";
+    rightOrWrong.style.color = "white";
+    gameOver();
+  } 
+  
+  if (userGoes === 0) {
+     rightOrWrong.textContent = "!!!GAME OVER!!!";
+     rightOrWrong.style.backgroundColor = "red";
+     rightOrWrong.style.color = "white";
+     gameOver();
+  } 
+    else if (userGuess != randomNumber) {
+    rightOrWrong.textContent = "Try Again!";
+    rightOrWrong.style.backgroundColor = "orange";
+    rightOrWrong.style.color = "white";
+  } if (userGuess > randomNumber) {
+      highOrLow.textContent = "Your Guess is too High!";
+      }
+    else if (userGuess < randomNumber) {
+      highOrLow.textContent = "Your Guess is too Low!";
   }
+    };
   
-  guessCount++;
-  console.log(guessCount);
-  guessField.value = '';
-  guessField.focus;
-}
 
-document.addEventListener('keypress', function(event) {
-  if (event.key === "Enter") {
-    checkGuess();
-  }
-  
-  return;
-});
+submitButton.addEventListener("click", submitGuess);
 
-
-document.addEventListener('click', function(event) {
-  if (event.target.closest('.guessSubmit')) {
-    checkGuess();
-  }
-  
-  if (event.target.closest('.resetButton')) {
-    resetGame();
-  }
-  
-  return;
-  
-});
-
-const setGameOver = () => {
-  guessField.disabled = true;
-  guessSubmit.disabled = true;
-  resetButton.classList.toggle('resetButton--hidden');
-  resetButton.classList.toggle('resetButton--show');
-}
-
-const resetGame = () => {
-  guessCount = 1;
-  const resetParas = document.querySelectorAll('.resultParas p');
-  for (let i = 0 ; i < resetParas.length ; i++) {
-    resetParas[i].textContent = '';
-  }
-  
-  resetButton.classList.toggle('resetButton--show');
-  resetButton.classList.toggle('resetButton--hidden');
-  
+ var resetGame =()=> {
+  submitButton.disabled = false;
   guessField.disabled = false;
-  guessSubmit.disabled = false;
-  guessField.value = '';
-  guessField.focus();
+  guessField.value = "";
+  userGoes = 10;
+  resetButton.remove();
+  generateNumber();
+  userGoesSpan.innerHTML = "10";
+    
   
-  lastResult.classList.remove('gameOver');
-  lastResult.classList.remove('wrongAnswer');
-  lastResult.classList.remove('rightAnswer');
-  
-  randomNumber = Math.floor(Math.random() * 100) + 1;
-}
+    for (i=0; i < paras.length; i++) {
+      paras[i].textContent = "";
+  }};
+
+
+
+
+// diables buttons / text field when game is over
+
+var gameOver =()=> {
+  highOrLow.textContent = "";
+  submitButton.disabled = true;
+  guessField.disabled = true;
+  resetButton = document.createElement("button");
+  buttonText = document.createTextNode("Play Again?");
+  resetButton.appendChild(buttonText);
+  container.appendChild(resetButton);
+  resetButton.addEventListener("click", ()=> {
+  resetGame();
+})};
+ 
+ 
+
+// change color of userGoesSpan green - orange - red
