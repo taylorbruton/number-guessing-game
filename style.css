@@ -1,19 +1,62 @@
-* {
-    box-sizing: border-box;
+html {
+  font-family: sans-serif;
+}
 
 body {
-        font-family: sans-serif;
-      }
+  background-color: #0074D9;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-      body {
-        width: 50%;
-        max-width: 800px;
-        min-width: 480px;
-        margin: 0 auto;
-      }
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  padding: 20px;
+  background: #fffaf6;
+  border-radius: 4px;
+  color: #111111;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 1px 5px rgba(0,0,0,0.2), 0 0 0 12px rgba(255,255,255,0.4);
+}
 
-      .lastResult {
-        color: white;
-        padding: 3px;
-      }
-/* Add CSS Styles Below */
+.main__title {
+  align-self: center;
+}
+
+.lastResult {
+  color: white;
+  padding: 3px;
+}
+
+.rightAnswer {
+  color: green;
+}
+
+.wrongAnswer,
+.gameOver {
+  color: red;
+}
+
+.gameOver {
+  font-size: 30px;
+}
+
+.resetButton {
+  align-self: center;
+  padding: 10px;
+  border: none;
+  background-color: #001f3f;
+  color: #fff;
+  cursor: pointer;
+}
+
+.resetButton--hidden {
+  display: none;
+}
+
+.resetButton--show {
+  display: block;
+}
