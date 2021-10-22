@@ -1,45 +1,48 @@
 html {
-            font-family: Helvetica;
-        }
+      font-family: Helvetica;
+     }
         
-        body {
-            width: 50%;
-            max-width: 800px;
-            min-width: 480px;
-            margin: 0 auto;
-            background-color: #DAE2F8; 
-
-
-        }
+body {
+      width: 50%;
+      max-width: 800px;
+      min-width: 480px;
+      margin: 0 auto;
+      background-color: #DAE2F8; 
+     }
         
-        .lastResult {
+.lastResult {
             color: white;
             padding: 3px;
+             }
+        
+h1{
+    color:#d13371;
+    text-align:center;
+    border:1px solid #d13371;
+    padding:10px 0; 
+   }
+        
+.pra{
+     color:#6b6363;
+     text-align:center;
+     margin:50px 0; 
+     }
+        
+.form ,.result{
+        text-align:center; 
         }
-        h1{
-            color:#d13371;
-            text-align:center;
-            border:1px solid #d13371;
-            padding:10px 0; 
+       
+.guessField{
+        height:30px;
+        width:80px;
+        background-color:#DAE2F8;
+        border:1px solid #DAE2F8;
+        color:#d13371;
+        font-size:20px;
+        padding-left:20px;
         }
-        .pra{
-            color:#6b6363;
-            text-align:center;
-            margin:50px 0; 
-        }
-        .form ,.result{
-            text-align:center; 
-        }
-        .guessField{
-            height:30px;
-            width:80px;
-            background-color:#DAE2F8;
-            border:1px solid #DAE2F8;
-            color:#d13371;
-            font-size:20px;
-            padding-left:20px;
-        }
-        .guessSubmit{
+
+.guessSubmit{
             background-color:#DAE2F8;
             border:1px solid #d13371; 
             width:100px;
