@@ -1,15 +1,22 @@
+* {
+  font-weight: 600;
+}
+
+body {
+  margin-top: 50px;
+}
 
 div {
   width: 50%;
   margin: 0 auto;
   border: 3px solid #1650ad;
   padding: 20px;
-  background: #d8bee8;
+  background: #ade8f4;
   text-align: center;
   max-width: 400px;
   }
 
 h1 {
-  color: #1650ad;
+  color: #0077b6;
 }
 
