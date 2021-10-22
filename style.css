@@ -1,12 +1,9 @@
 * {
   font-weight: 600;
-  }
-
-body {
-  font-family: Helvetica;
-  margin-top: 100px;
   background-color: #48cae4;
-}
+   font-family: Helvetica;
+    margin-top: 100px;
+  }
 
 div {
   width: 50%;
