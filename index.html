@@ -9,23 +9,17 @@
 </head>
 
 <body>
-   <h1>Number guessing game</h1>
+  <div>
+  <h1>Number Guessing Game</h1>
+  <h4>Guess the number between 1-100.</h4>
+  <h4>Enter a Guess:</h4>
+  <input type="text" id="guessField">
+  <input type="submit" value="Submit Guess" id="submitButton">
 
-    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
-
-    <div class="form">
-      <label for="guessField">Enter a guess: </label>
-      <input type="text" id="guessField" class="guessField">
-      <input type="submit" value="Submit guess" class="guessSubmit">
-    </div>
-
-    <div class="resultParas">
-      <p class="guesses"></p>
-      <p class="lastResult"></p>
-      <p class="lowOrHi"></p>
-     </div>
-    
-    <button class="resetButton resetButton--hidden">Start New Game</button>
+  <p id="previousGuess"></p>
+  <p id="rightOrWrong"></p>
+  <p id="highOrLow"></p>
+</div>
     
     <script src="script.js"></script>
 </body>
