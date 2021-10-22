@@ -2,62 +2,26 @@ html {
   font-family: sans-serif;
 }
 
+* {
+  font-weight: 600;
+}
+
+
 body {
-  background-color: #0074D9;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-top: 50px;
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  width: 360px;
+div {
+  width: 50%;
+  margin: 0 auto;
+  border: 3px solid #1650ad;
   padding: 20px;
-  background: #fffaf6;
-  border-radius: 4px;
-  color: #111111;
-  box-shadow: 0 2px 2px rgba(0,0,0,0.2), 0 1px 5px rgba(0,0,0,0.2), 0 0 0 12px rgba(255,255,255,0.4);
-}
+  background: #d8bee8;
+  text-align: center;
+  max-width: 400px;
+  }
 
-.main__title {
-  align-self: center;
-}
-
-.lastResult {
-  color: white;
-  padding: 3px;
-}
-
-.rightAnswer {
-  color: green;
-}
-
-.wrongAnswer,
-.gameOver {
-  color: red;
-}
-
-.gameOver {
-  font-size: 30px;
-}
-
-.resetButton {
-  align-self: center;
-  padding: 10px;
-  border: none;
-  background-color: #001f3f;
-  color: #fff;
-  cursor: pointer;
-}
-
-.resetButton--hidden {
-  display: none;
-}
-
-.resetButton--show {
-  display: block;
+h1 {
+  color: #1650ad;
 }
 
