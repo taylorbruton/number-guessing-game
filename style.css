@@ -11,13 +11,9 @@ h1 {
   color: #0077b6;
 }
 
-h4 {
-  color: #023e8a
-}
-
 div {
   width: 50%;
-  margin: 0 auto;
+  margin: 10 auto;
   border: 3px solid #1650ad;
   padding: 20px;
   background: #ade8f4;
