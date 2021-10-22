@@ -1,8 +1,7 @@
-* {
-  font-weight: 600;
-}
+
 
 body {
+  font-family: Helvetica;
   margin-top: 100px;
   background-color: #48cae4;
 }
