@@ -4,8 +4,7 @@ html {
         
 body {
       width: 50%;
-      max-width: 800px;
-      min-width: 480px;
+      max-width: 480px;
       margin: 0 auto;
       background-color: #C1A5A9; 
      }
@@ -44,8 +43,4 @@ h1{
             font-size:18px;
             margin:40px 0; 
         }
-
-
-@media screen and (min-width: 480px) {
-}
 
